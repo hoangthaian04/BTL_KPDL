@@ -1,0 +1,11 @@
+# Môi trường ảo
+venv/
+env/
+.venv/
+
+# Thư mục log của CatBoost
+catboost_info/
+
+# Các file tạm của Python
+__pycache__/
+*.py[cod]
