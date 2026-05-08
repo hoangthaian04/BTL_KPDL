@@ -1,0 +1,27 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    url: jdbc:mysql://mysql:3306/BTL_data_mining?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=Asia/Ho_Chi_Minh
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+
+mining:
+  python-executable: python
+  python-app-path: /opt/btl_kpdl/python/app.py
+  summary-path: /opt/btl_kpdl/python/artifacts/training_summary.json
+  dashboard-path: /opt/btl_kpdl/python/artifacts/dashboard.html
+  metrics-path: /opt/btl_kpdl/python/artifacts/metrics.csv
+  high-risk-path: /opt/btl_kpdl/python/artifacts/high_risk_customers.csv
+  care-path: /opt/btl_kpdl/python/artifacts/care_customers.csv
+  charts-path: /opt/btl_kpdl/python/artifacts/charts
+  temp-dir: /opt/btl_kpdl/java/tmp

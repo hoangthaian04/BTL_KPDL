@@ -9,3 +9,23 @@ catboost_info/
 # Các file tạm của Python
 __pycache__/
 *.py[cod]
+
+# Node / Java build outputs
+react/node_modules/
+react/dist/
+java/target/
+java/tmp/
+
+# Python artifacts
+python/artifacts/
+
+# Airflow runtime files
+airflow/logs/
+airflow/.airflow/
+airflow/state/
+airflow/airflow.db
+python/incoming_data/processed/
+
+# Local datasets / internal docs
+Telco_customer_churn.xlsx
+Yêu cầu BTL mining.md

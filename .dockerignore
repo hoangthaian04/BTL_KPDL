@@ -1,0 +1,11 @@
+.git
+react/node_modules
+react/dist
+java/target
+java/tmp
+airflow/.airflow
+airflow/logs
+airflow/state
+python/incoming_data/processed
+__pycache__
+*.pyc

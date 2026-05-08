@@ -1,0 +1,29 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: telco-churn-backend
+  datasource:
+    url: jdbc:mysql://localhost:3306/BTL_data_mining?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=Asia/Ho_Chi_Minh
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+
+mining:
+  python-executable: python
+  python-app-path: ../python/app.py
+  summary-path: ../python/artifacts/training_summary.json
+  dashboard-path: ../python/artifacts/dashboard.html
+  metrics-path: ../python/artifacts/metrics.csv
+  high-risk-path: ../python/artifacts/high_risk_customers.csv
+  care-path: ../python/artifacts/care_customers.csv
+  charts-path: ../python/artifacts/charts
+  temp-dir: ../java/tmp
