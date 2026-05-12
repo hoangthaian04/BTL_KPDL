@@ -30,10 +30,11 @@ def clean_dataframe(df: pd.DataFrame) -> pd.DataFrame:
             cleaned[column] = pd.to_numeric(cleaned[column], errors="coerce")
 
     cleaned = cleaned.drop(columns=[column for column in DROP_COLUMNS if column in cleaned.columns])
-    if TARGET_COLUMN not in cleaned.columns:
-        raise ValueError(f"Expected target column '{TARGET_COLUMN}' not found")
-
-    return cleaned.dropna(subset=[TARGET_COLUMN]).drop_duplicates()
+    
+    if TARGET_COLUMN in cleaned.columns:
+        cleaned = cleaned.dropna(subset=[TARGET_COLUMN])
+        
+    return cleaned.drop_duplicates()
 
 
 def add_engineered_features(df: pd.DataFrame) -> pd.DataFrame:

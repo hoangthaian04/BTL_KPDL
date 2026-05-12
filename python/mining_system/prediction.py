@@ -24,6 +24,9 @@ def load_trained_bundle() -> dict[str, Any]:
 def predict_customer(customer_payload: dict[str, Any]) -> dict[str, Any]:
     bundle = load_trained_bundle()
     payload_frame = pd.DataFrame([customer_payload])
+    
+    payload_frame = clean_dataframe(payload_frame)
+    payload_frame = add_engineered_features(payload_frame)
 
     for column in bundle["training_columns"]:
         if column not in payload_frame.columns:

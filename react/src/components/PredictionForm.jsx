@@ -54,8 +54,8 @@ export default function PredictionForm({ onPredict, prediction, loading }) {
         <div className="prediction-result">
           <p>Model: {prediction.model}</p>
           <p>Prediction label: {prediction.prediction}</p>
-          <p>Churn probability: {(prediction.churnProbability * 100).toFixed(2)}%</p>
-          <p>Predicted at: {prediction.predictedAt}</p>
+          <p>Churn probability: {(prediction.churn_probability * 100).toFixed(2)}%</p>
+          <p>Predicted at: {prediction.predicted_at}</p>
           <p>Dataset update: customer da duoc them vao dataset goc voi nhan churn de trong.</p>
         </div>
       )}
